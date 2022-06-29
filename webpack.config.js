@@ -1,7 +1,6 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -48,7 +47,8 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: './app/index.html', to: 'index.html' }
+        { from: './app/index.html', to: 'index.html' },
+        { from: 'vendor', to: 'vendor' },
       ]
     })
   ]
