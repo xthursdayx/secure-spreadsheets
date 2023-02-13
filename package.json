@@ -1,18 +1,24 @@
 {
   "name": "@standardnotes/spreadsheets",
-  "private": true,
-  "version": "1.4.9",
+  "version": "1.7.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Standard Notes.",
   "main": "dist/dist.js",
   "scripts": {
     "skip:lint": "eslint app/ --ext .js",
     "lint:fix": "eslint app/ --ext .js --fix",
-    "components:compile": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js",
     "start": "webpack serve --config webpack.dev.js --progress --hot",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "sn": {
     "main": "dist/index.html"
+  },
+  "dependencies": {
+    "@standardnotes/component-relay": "standardnotes/component-relay#839ff5db9bc92db9d42cad8d202ddc4df729597d"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -21,7 +27,6 @@
     "@babel/plugin-transform-runtime": "^7.10.1",
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-react": "^7.10.1",
-    "@standardnotes/component-relay": "2.2.0",
     "@standardnotes/eslint-config-extensions": "^1.0.4",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "*",
